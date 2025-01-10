@@ -1,18 +1,4 @@
 https://mui.com/material-ui/all-components/
-
-
-
-
-
-
-
-PS A:\ATS\Frontend> node -v
-v22.12.0
-PS A:\ATS\Frontend> npm -v
-10.9.0
-PS A:\ATS\Frontend> npx -v
-10.9.0
-PS A:\ATS\Frontend> npx create-react-app ats
-Need to install the following packages:
-create-react-app@5.0.1
-npm install @mui/material @emotion/react @emotion/styled
+1. Install and set up Git
+2. Install Node
+3. pull the project
