@@ -1,4 +1,0 @@
-https://mui.com/material-ui/all-components/
-1. Install and set up Git
-2. Install Node
-3. pull the project
