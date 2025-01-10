@@ -1,13 +1,13 @@
 Backend:
 
-  docker run --name postgres -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
-  docker exec -it postgres bash
-  psql -U postgres
-    CREATE DATABASE mydb;
-    \c mydb
-    \q
-  exit
-  TODO:Create the databases for all the masters(tables)
+    docker run --name postgres -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+    docker exec -it postgres bash
+    psql -U postgres
+      CREATE DATABASE mydb;
+      \c mydb
+      \q
+    exit
+    TODO:Create the databases for all the masters(tables)
 
 Frontend:
 
