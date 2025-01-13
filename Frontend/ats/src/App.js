@@ -6,7 +6,7 @@ function App() {
       <h1>
         ATS
       </h1>
-      <p>sukriti</p>
+      <p>sukriti,n</p>
       <WebsiteLandingPage/>
     </>
   );
