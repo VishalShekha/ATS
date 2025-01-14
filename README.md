@@ -8,6 +8,8 @@ Backend:
       \q
     exit
     TODO:Create the databases for all the masters(tables)
+    
+    docker build -t vishaltshekha/postgres-ats-db .
 
 Frontend:
 
