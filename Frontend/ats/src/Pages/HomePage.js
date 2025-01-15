@@ -9,7 +9,7 @@ export default function Homepage() {
   return (
     <div
       style={{
-        backgroundColor: '#112E3E',
+        background: 'linear-gradient(to bottom, #112E3E, #1A4C63)', // Gradient background
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -32,18 +32,18 @@ export default function Homepage() {
       {/* Box */}
       <div
         style={{
-          backgroundColor: '#DDD0C8',
+          backgroundColor: 'white',
           width: '80%',
-          marginTop: '20px', // Space below the image
+          marginTop: '20px',
           borderRadius: '15px',
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
           padding: '40px',
           textAlign: 'center',
           height: '100%',
           marginBottom: '20px',
-          display: 'flex', // Flexbox for centering
+          display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center', // Center vertically
+          justifyContent: 'center',
         }}
       >
         {/* Buttons */}
@@ -52,7 +52,7 @@ export default function Homepage() {
           spacing={2}
           style={{
             width: '100%',
-            justifyContent: 'space-between', // Evenly spaced buttons
+            justifyContent: 'space-between',
             alignItems: 'center',
           }}
         >
@@ -62,12 +62,13 @@ export default function Homepage() {
             style={{
               backgroundColor: '#112E3E',
               color: '#FFFFFF',
-              flex: 1, // Makes buttons stretch evenly
-              maxWidth: '30%', // Prevents buttons from being too wide
+              flex: 1,
+              maxWidth: '30%',
               height: '120px',
               borderRadius: '10px',
               transition: 'transform 0.3s',
-              fontSize: '16px', // Ensures text is visible
+              fontSize: '18px', // Improved font size
+              fontFamily: '"Roboto", sans-serif', // Modern font
             }}
             onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
             onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -85,7 +86,8 @@ export default function Homepage() {
               height: '120px',
               borderRadius: '10px',
               transition: 'transform 0.3s',
-              fontSize: '16px',
+              fontSize: '18px',
+              fontFamily: '"Roboto", sans-serif',
             }}
             onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
             onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -103,7 +105,8 @@ export default function Homepage() {
               height: '120px',
               borderRadius: '10px',
               transition: 'transform 0.3s',
-              fontSize: '16px',
+              fontSize: '18px',
+              fontFamily: '"Roboto", sans-serif',
             }}
             onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
             onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
