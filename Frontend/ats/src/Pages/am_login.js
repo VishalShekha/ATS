@@ -4,15 +4,16 @@ import { TextField, Button, Typography } from '@mui/material';
 export default function App() {
   return (
     <div
-      style={{
-        backgroundColor: '#112E3E',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-      }}
+        style={{
+          backgroundColor: '#112E3E',
+          width: '99vw', // Make sure the width is 100% of the viewport width
+          height: '98vh', // Make sure the height is 100% of the viewport height
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+        }}
     >
       {/* Title */}
       <Typography
@@ -23,6 +24,7 @@ export default function App() {
           marginBottom: '20px',
         }}
       >
+        {/* TODO:take this is as property */}
         AM Login
       </Typography>
 
@@ -30,7 +32,7 @@ export default function App() {
       <div
         style={{
           backgroundColor: '#DDD0C8',
-          width: '80%',
+          width: '30%',
           padding: '40px',
           borderRadius: '15px',
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',

@@ -32,7 +32,7 @@ export default function Homepage() {
     <div
       style={{
         backgroundColor: '#FFFFFF',
-        height: '100vh',
+        height: '98vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',

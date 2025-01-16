@@ -172,6 +172,7 @@ const CreateClient = () => {
                   required
                 >
                   {/* Industry options */}
+                  {/* TODO:Get this list from DB */}
                   <option value="Agriculture/Forestry/Fishing">Agriculture/Forestry/Fishing</option>
                   <option value="Meat and Minerals">Meat and Minerals</option>
                   <option value="Energy and Utilities">Energy and Utilities</option>

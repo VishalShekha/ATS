@@ -29,7 +29,7 @@ const AmHome = () => {
     };
 
     return (
-        <div style={styles.pageContainer}>
+        <div >
             <Header />
             <div style={styles.content}>
                 <div style={styles.buttonBox}>
