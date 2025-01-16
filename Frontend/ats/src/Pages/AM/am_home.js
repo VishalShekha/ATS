@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Components/Header';
+import Header from '../../Components/Header';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import PersonAddIcon from '@mui/icons-material/PersonAdd'; 

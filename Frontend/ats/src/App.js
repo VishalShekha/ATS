@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebsiteLandingPage from "./Pages/WebsiteLandingPage.js";
 import HomePage from "./Pages/HomePage.js";
 import AmLogin from "./Pages/am_login.js";
-import AmHome from "./Pages/am_home.js";
+import AmHome from "./Pages/AM/am_home.js";
 
 function App() {
   return (
