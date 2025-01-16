@@ -43,7 +43,7 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px 20px',
-        background: '#333',
+        background: 'white',
         color: '#fff',
     },
     logo: {
@@ -60,7 +60,7 @@ const styles = {
     menuButton: {
         fontSize: '20px',
         background: 'none',
-        color: '#fff',
+        color: 'black',
         border: 'none',
         cursor: 'pointer',
     },
