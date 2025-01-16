@@ -22,7 +22,7 @@ async function main() {
       // const res = await client.query(insertQuery);
   
       // Retrieve and print all data from 'user'
-      const selectQuery = 'SELECT * FROM "admin"';
+      const selectQuery = 'SELECT * FROM "industry_master"';
       const selectRes = await client.query(selectQuery);
       
       console.log('All records in user table:');
