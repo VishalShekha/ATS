@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import PersonAddIcon from '@mui/icons-material/PersonAdd'; 
 import PostAddIcon from '@mui/icons-material/PostAdd'; 
 import EditNoteIcon from '@mui/icons-material/EditNote'; 
+import Sidebar from '../../Components/AM_Sidebar'; // Adjust the path as needed
 
 const AmHome = () => {
     const buttonStyle = {
@@ -44,41 +45,44 @@ const AmHome = () => {
     return (
         <div style={styles.pageContainer}>
             <Header />
-            <div style={styles.content}>
-                <div style={styles.buttonBox}>
-                    <Stack
-                        direction="column"
-                        spacing={2} 
-                        style={styles.buttonStack}
-                    >
-                        <Button
-                            variant="contained"
-                            startIcon={<PersonAddIcon />} 
-                            style={buttonStyle}
-                            onMouseOver={handleMouseOver}
-                            onMouseOut={handleMouseOut}
+            <div style={styles.mainContent}>
+                <Sidebar />
+                <div style={styles.content}>
+                    <div style={styles.buttonBox}>
+                        <Stack
+                            direction="column"
+                            spacing={2} 
+                            style={styles.buttonStack}
                         >
-                            Create Client
-                        </Button>
-                        <Button
-                            variant="contained"
-                            startIcon={<PostAddIcon />} 
-                            style={buttonStyle}
-                            onMouseOver={handleMouseOver}
-                            onMouseOut={handleMouseOut}
-                        >
-                            Add Requirement
-                        </Button>
-                        <Button
-                            variant="contained"
-                            startIcon={<EditNoteIcon />} 
-                            style={buttonStyle}
-                            onMouseOver={handleMouseOver}
-                            onMouseOut={handleMouseOut}
-                        >
-                            View/Edit Requirements
-                        </Button>
-                    </Stack>
+                            <Button
+                                variant="contained"
+                                startIcon={<PersonAddIcon />} 
+                                style={buttonStyle}
+                                onMouseOver={handleMouseOver}
+                                onMouseOut={handleMouseOut}
+                            >
+                                Create Client
+                            </Button>
+                            <Button
+                                variant="contained"
+                                startIcon={<PostAddIcon />} 
+                                style={buttonStyle}
+                                onMouseOver={handleMouseOver}
+                                onMouseOut={handleMouseOut}
+                            >
+                                Add Requirement
+                            </Button>
+                            <Button
+                                variant="contained"
+                                startIcon={<EditNoteIcon />} 
+                                style={buttonStyle}
+                                onMouseOver={handleMouseOver}
+                                onMouseOut={handleMouseOut}
+                            >
+                                View/Edit Requirements
+                            </Button>
+                        </Stack>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,6 +95,13 @@ const styles = {
         height: '100vh', 
         margin: '0',
         padding: '0',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    mainContent: {
+        display: 'flex',
+        flexGrow: 1,
+        marginTop: '64px', // Adjust this value if the header height changes
     },
     content: {
         display: 'flex',
@@ -100,6 +111,7 @@ const styles = {
         height: '100%', 
         textAlign: 'center',
         padding: '20px',
+        flexGrow: 1,
     },
     buttonBox: {
         background: 'rgba(0, 0, 0, 0.05)', 

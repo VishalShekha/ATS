@@ -71,7 +71,7 @@ const styles = {
     left: '0',
     width: '100%',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
-    zIndex: '10',
+    zIndex: '1100', // Set zIndex to ensure header is above the sidebar
   },
   logo: {
     flex: 1, 
@@ -134,12 +134,9 @@ const styles = {
   },
 };
 
-
-
 const App = () => (
   <>
     <Header />
-    
   </>
 );
 
