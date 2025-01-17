@@ -7,65 +7,80 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Homepage() {
   const buttonStyle = {
-    backgroundColor: '#FFFFFF',
-    color: 'black',
+    backgroundColor:'rgb(115, 49, 202)', 
+    color: 'white', 
     flex: 1,
-    maxWidth: '45%',
-    height: '120px',
-    borderRadius: '10px',
-    transition: 'transform 0.3s',
-    fontSize: '18px',
+    maxWidth: '200px',
+    height: '60px',
+    fontSize: '16px',
     fontFamily: '"Roboto", sans-serif',
     textTransform: 'none',
     marginBottom: '20px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    border: '2px solid transparent', 
+    transition: 'background-color 0.3s, color 0.3s, border 0.3s', 
   };
 
   const handleMouseOver = (e) => {
-    e.currentTarget.style.transform = 'scale(1.05)';
+    e.currentTarget.style.backgroundColor = '#FFFFFF'; 
+    e.currentTarget.style.color = 'rgb(115, 49, 202)'; 
+    e.currentTarget.style.border = '2px solid rgb(115, 49, 202)'; 
   };
 
   const handleMouseOut = (e) => {
-    e.currentTarget.style.transform = 'scale(1)';
+    e.currentTarget.style.backgroundColor = 'rgb(115, 49, 202)'; 
+    e.currentTarget.style.color = '#FFFFFF'; 
+    e.currentTarget.style.border = '2px solid transparent'; 
   };
 
   return (
     <div
       style={{
-        backgroundColor: '#FFFFFF',
-        height: '98vh',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        position: 'relative',
       }}
     >
-      {/* Logo */}
-      <img
-        src="/logo.png"
-        alt="Logo"
-        style={{
-          marginTop: '20px',
-          width: '100px',
-          height: 'auto',
-        }}
-      />
-
-      {/* Box - Centered Content */}
+      {/* Purple Area */}
       <div
         style={{
-          background: 'linear-gradient(to bottom, rgb(255, 255, 255), rgb(237, 227, 249))',
+          background: 'linear-gradient(to right,  rgb(112, 80, 207), rgba(156, 99, 241, 0.86))',
+          height: '10%',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '20px',
+          boxSizing: 'border-box',
+          position: 'absolute',
+          top: '0',
+          left: '0',
           width: '100%',
-          marginTop: '20px',
-          borderRadius: '15px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
-          padding: '40px',
-          height: '100%',
-          marginBottom: '20px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+          zIndex: '10',
+        }}
+      >
+        <img
+          src="/Logo-bg.png"
+          alt="Logo"
+          style={{
+            width: '100px',
+            height: 'auto',
+          }}
+        />
+      </div>
+
+      {/* White Area */}
+      <div
+        style={{
+          backgroundColor: 'white',
+          marginTop: '7%',
+          height: '90%',
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'flex-start', 
+          justifyContent: 'space-around',
           alignItems: 'center',
+          padding: '40px',
           boxSizing: 'border-box',
         }}
       >
@@ -73,8 +88,8 @@ export default function Homepage() {
         <div
           style={{
             flex: 1,
-            textAlign: 'left',
-            marginLeft: '230px', 
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
           <Stack direction="column" spacing={2}>
@@ -112,13 +127,14 @@ export default function Homepage() {
         <div
           style={{
             flex: 1,
-            textAlign: 'left',
-            marginLeft: '150px', 
-            fontFamily: 'unset',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
           }}
         >
-          <h2 style={{ marginBottom: '20px', maxWidth: '50%' }}>
-            "Filtering Out Humans, One Keyword at a Time."
+          <h2 style={{ marginBottom: '20px', maxWidth: '80%', fontSize: '20px' }}>
+            "Filtering Out Humans, One Keyword at a Time..."
           </h2>
           <img
             src="/recruitment.png"

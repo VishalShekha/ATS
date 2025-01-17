@@ -5,7 +5,7 @@ const GoBackButton = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Go back to the previous page
+    navigate(-1); 
   };
 
   return (
@@ -28,7 +28,7 @@ const Header = () => {
       {/* Logo */}
       <div style={styles.logo}>
         <img
-          src="/logo.png" 
+          src="/Logo-bg.png" 
           alt="Logo"
           style={styles.logoImage}
         />
@@ -60,35 +60,42 @@ const Header = () => {
 
 const styles = {
   header: {
+    background: 'linear-gradient(to right,  rgb(112, 80, 207), rgba(156, 99, 241, 0.86))',
+    height: '60px',
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px 20px',
-    background: 'white',
-    color: '#fff',
+    padding: '0 20px',
+    boxSizing: 'border-box',
+    position: 'fixed', 
+    top: '0',
+    left: '0',
+    width: '100%',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+    zIndex: '10',
   },
   logo: {
+    flex: 1, 
     display: 'flex',
     alignItems: 'center',
   },
   logoImage: {
-    height: '40px',
-    width: 'auto',
+    width: '100px',
+    height: 'auto',
   },
   rightContainer: {
     display: 'flex',
     alignItems: 'center',
   },
   goBackButton: {
-    fontSize: '20px', // Adjust size of the icon
+    fontSize: '20px',
     background: 'none',
-    color: 'black',
+    color: 'white',
     border: 'none',
     cursor: 'pointer',
-    marginRight: '20px', // Spacing between Go Back and Menu button
+    marginRight: '20px', 
   },
   icon: {
-    fontSize: '24px', // Size of the icon
+    fontSize: '24px', 
   },
   menuContainer: {
     position: 'relative',
@@ -96,7 +103,7 @@ const styles = {
   menuButton: {
     fontSize: '20px',
     background: 'none',
-    color: 'black',
+    color: 'white',
     border: 'none',
     cursor: 'pointer',
   },
@@ -121,6 +128,19 @@ const styles = {
     borderBottom: '1px solid #ddd',
     cursor: 'pointer',
   },
+  content: {
+    paddingTop: '60px', 
+    boxSizing: 'border-box',
+  },
 };
 
-export default Header;
+
+
+const App = () => (
+  <>
+    <Header />
+    
+  </>
+);
+
+export default App;
