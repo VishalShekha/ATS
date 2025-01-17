@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../Components/Header';
-
+import Sidebar from '../../Components/AM_Sidebar';
 
 const CreateClient = () => {
   const [clientDetails, setClientDetails] = useState({
@@ -8,7 +8,7 @@ const CreateClient = () => {
     contactPerson: '',
     emailId: '',
     contactNumber: '',
-    industry: [],
+    industry: '',
     registeredAddress: '',
     gst: '',
     pan: '',
@@ -16,28 +16,30 @@ const CreateClient = () => {
     otherNotes: '',
   });
 
+  const [isIndustryOpen, setIndustryOpen] = useState(false);
+
   const styles = {
     buttonBox: {
-      background: 'linear-gradient(to bottom, #112E3E, #1A4C63)',
-      width: '100%',
+      background: '#f5f5f5',
+      width: '70%',
       maxWidth: '1200px',
-      borderRadius: '15px',
       boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
       padding: '40px',
       textAlign: 'center',
       marginLeft: 'auto',
       marginRight: 'auto',
-      height: '100%',
+      
       marginBottom: '20px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       boxSizing: 'border-box',
+      marginTop: '0px',
     },
     formContainer: {
       width: '100%',
-      maxWidth: '800px', 
-      backgroundColor: 'transparent', 
+      maxWidth: '800px',
+      backgroundColor: 'transparent',
     },
     row: {
       display: 'flex',
@@ -47,12 +49,14 @@ const CreateClient = () => {
     },
     formGroup: {
       flex: 1,
+      textAlign: 'left',
     },
     label: {
       display: 'block',
       marginBottom: '8px',
       fontWeight: 'bold',
-      color: '#ffffff',
+      color: '#008080',
+      fontSize: '14px',
     },
     input: {
       width: '100%',
@@ -84,7 +88,10 @@ const CreateClient = () => {
       borderRadius: '5px',
       cursor: 'pointer',
       fontWeight: 'bold',
-      alignSelf: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '8px',
     },
   };
 
@@ -93,9 +100,13 @@ const CreateClient = () => {
     setClientDetails({ ...clientDetails, [name]: value });
   };
 
+  const toggleIndustryDropdown = () => {
+    setIndustryOpen(!isIndustryOpen);
+  };
+
   const handleIndustryChange = (e) => {
-    const options = Array.from(e.target.selectedOptions, (option) => option.value);
-    setClientDetails({ ...clientDetails, industry: options });
+    setClientDetails({ ...clientDetails, industry: e.target.value });
+    setIndustryOpen(false);
   };
 
   const handleSubmit = (e) => {
@@ -106,9 +117,10 @@ const CreateClient = () => {
   return (
     <div>
       <Header />
+      <Sidebar />
       <div style={styles.buttonBox}>
         <div style={styles.formContainer}>
-          <h1 style={{ color: '#ffffff' }}>Create Client</h1>
+          <h1 style={{ color: '#000000' }}>Create Client</h1>
           <form onSubmit={handleSubmit}>
             {/* Client Name and Contact Person */}
             <div style={styles.row}>
@@ -144,7 +156,7 @@ const CreateClient = () => {
                 name="emailId"
                 value={clientDetails.emailId}
                 onChange={handleInputChange}
-                style={styles.input}
+                style={{ ...styles.input, width: '70%' }}
                 required
               />
             </div>
@@ -163,17 +175,35 @@ const CreateClient = () => {
               </div>
               <div style={styles.formGroup}>
                 <label style={styles.label}>Industry *</label>
-                <select
-                  name="industry"
-                  multiple
-                  value={clientDetails.industry}
-                  onChange={handleIndustryChange}
-                  style={styles.select}
-                  required
+                <div
+                  onClick={toggleIndustryDropdown}
+                  style={{
+                    position: 'relative',
+                    cursor: 'pointer',
+                    border: '1px solid #ccc',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    backgroundColor: '#fff',
+                  }}
                 >
-                  {/* Industry options */}
-                  {/* TODO:Get this list from DB */}
-                  <option value="Agriculture/Forestry/Fishing">Agriculture/Forestry/Fishing</option>
+                  {clientDetails.industry || 'Select Industry'}
+                  {isIndustryOpen && (
+                    <select
+                      name="industry"
+                      value={clientDetails.industry}
+                      onChange={handleIndustryChange}
+                      style={{
+                        ...styles.select,
+                        position: 'absolute',
+                        top: '100%',
+                        left: 0,
+                        width: '100%',
+                        zIndex: 1,
+                      }}
+                      size={10}
+                      onBlur={() => setIndustryOpen(false)}
+                    >
+                      <option value="Agriculture/Forestry/Fishing">Agriculture/Forestry/Fishing</option>
                   <option value="Meat and Minerals">Meat and Minerals</option>
                   <option value="Energy and Utilities">Energy and Utilities</option>
                   <option value="Construction - Industrial Facilities and Infrastructure">Construction - Industrial Facilities and Infrastructure</option>
@@ -232,7 +262,11 @@ const CreateClient = () => {
                   <option value="Fitness and Wellness">Fitness and Wellness</option>
                   <option value="Fintech">Fintech</option>
                   <option value="Edtech">Edtech</option>
-                </select>
+
+                      {/* Add more options as needed */}
+                    </select>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -294,12 +328,11 @@ const CreateClient = () => {
               />
             </div>
 
-            {/* Submit Button */}
+            {/* Save Button */}
             <button type="submit" style={styles.submitButton}>
-              Submit
+              <span>💾</span>
+              Save
             </button>
-
-            
           </form>
         </div>
       </div>

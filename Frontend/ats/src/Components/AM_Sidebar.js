@@ -24,9 +24,9 @@ export default function Sidebar() {
           [`& .MuiDrawer-paper`]: { 
             width: isExpanded ? drawerWidthExpanded : drawerWidthCollapsed, 
             boxSizing: 'border-box',
-            position: 'absolute', 
-            top: '60px', 
-            height: '100vh', 
+            position: 'fixed',  // Use fixed position to keep the sidebar in place when scrolling
+            top: '60px',             // Align with the top of the viewport
+            height: '100vh',    // Ensure the sidebar covers the full height of the viewport
             transition: 'width 0.3s', 
             overflow: 'hidden', 
             zIndex: 100, 

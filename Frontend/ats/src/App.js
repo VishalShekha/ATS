@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage.js";
 import AmLogin from "./Pages/am_login.js";
 import AmHome from "./Pages/AM/am_home.js";
 import CreateClient from "./Pages/AM/CreateClient.js";
+import AddRequirement from "./Pages/AM/addReq.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/amlogin" element={<AmLogin />} />
         <Route path="/amhome" element={<AmHome />} />
         <Route path="/createClient" element={<CreateClient />} />
+        <Route path="/addRequirement" element={<AddRequirement />} />
 
       </Routes>
     </Router>
