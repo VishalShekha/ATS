@@ -7,109 +7,144 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Homepage() {
   const buttonStyle = {
-    backgroundColor: '#FFFFFF', 
-    color: '#000000', 
+    backgroundColor:'rgb(115, 49, 202)', 
+    color: 'white', 
     flex: 1,
-    maxWidth: '30%',
-    height: '120px',
-    borderRadius: '10px',
-    transition: 'transform 0.3s',
-    fontSize: '18px',
+    maxWidth: '200px',
+    height: '60px',
+    fontSize: '16px',
     fontFamily: '"Roboto", sans-serif',
-    textTransform: 'none', 
+    textTransform: 'none',
+    marginBottom: '20px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    border: '2px solid transparent', 
+    transition: 'background-color 0.3s, color 0.3s, border 0.3s', 
   };
 
   const handleMouseOver = (e) => {
-    e.currentTarget.style.transform = 'scale(1.05)';
+    e.currentTarget.style.backgroundColor = '#FFFFFF'; 
+    e.currentTarget.style.color = 'rgb(115, 49, 202)'; 
+    e.currentTarget.style.border = '2px solid rgb(115, 49, 202)'; 
   };
 
   const handleMouseOut = (e) => {
-    e.currentTarget.style.transform = 'scale(1)';
+    e.currentTarget.style.backgroundColor = 'rgb(115, 49, 202)'; 
+    e.currentTarget.style.color = '#FFFFFF'; 
+    e.currentTarget.style.border = '2px solid transparent'; 
   };
 
   return (
     <div
       style={{
-        backgroundColor: '#FFFFFF', 
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start', 
-        justifyContent: 'flex-start',
-        position: 'relative',
-         
       }}
     >
-      {/* Logo */}
-      <img
-        src="/logo.png"
-        alt="Logo"
-        style={{
-          marginTop: '20px',
-          width: '100px',
-          height: 'auto',
-        }}
-      />
-
-      {/* Box - Centered Content */}
+      {/* Purple Area */}
       <div
         style={{
-          background: 'linear-gradient(to bottom, #112E3E, #1A4C63)', 
-          width: '100%', 
-          maxWidth: '1200px', 
-          marginTop: '20px',
-          borderRadius: '15px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
-          padding: '40px',
-          textAlign: 'center',
-          marginLeft: 'auto', 
-          marginRight: 'auto', 
-          height: '100%',
-          marginBottom: '20px',
+          background: 'linear-gradient(to right,  rgb(112, 80, 207), rgba(156, 99, 241, 0.86))',
+          height: '10%',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          boxSizing: 'border-box', 
+          alignItems: 'center',
+          padding: '20px',
+          boxSizing: 'border-box',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          width: '100%',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+          zIndex: '10',
         }}
       >
-        {/* Buttons */}
-        <Stack
-          direction={{ xs: 'column', sm: 'row' }} 
-          spacing={2}
+        <img
+          src="/Logo-bg.png"
+          alt="Logo"
           style={{
-            width: '100%',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            width: '100px',
+            height: 'auto',
+          }}
+        />
+      </div>
+
+      {/* White Area */}
+      <div
+        style={{
+          backgroundColor: 'white',
+          marginTop: '7%',
+          height: '90%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          padding: '40px',
+          boxSizing: 'border-box',
+        }}
+      >
+        {/* Left Section - Buttons */}
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
-          <Button
-            variant="contained"
-            startIcon={<AdminPanelSettingsIcon />}
-            style={buttonStyle}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            Admin
-          </Button>
-          <Button
-            variant="contained"
-            startIcon={<WorkIcon />}
-            style={buttonStyle}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            Recruiter
-          </Button>
-          <Button
-            variant="contained"
-            startIcon={<AccountCircleIcon />}
-            style={buttonStyle}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            Account Manager
-          </Button>
-        </Stack>
+          <Stack direction="column" spacing={2}>
+            <Button
+              variant="contained"
+              startIcon={<AdminPanelSettingsIcon />}
+              style={buttonStyle}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              Admin
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<WorkIcon />}
+              style={buttonStyle}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              Recruiter
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<AccountCircleIcon />}
+              style={buttonStyle}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              Account Manager
+            </Button>
+          </Stack>
+        </div>
+
+        {/* Right Section - Image and Phrase */}
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+          }}
+        >
+          <h2 style={{ marginBottom: '20px', maxWidth: '80%', fontSize: '20px' }}>
+            "Filtering Out Humans, One Keyword at a Time..."
+          </h2>
+          <img
+            src="/recruitment.png"
+            alt="Recruiting Visual"
+            style={{
+              maxWidth: '65%',
+              height: 'auto',
+            }}
+          />
+        </div>
       </div>
     </div>
   );

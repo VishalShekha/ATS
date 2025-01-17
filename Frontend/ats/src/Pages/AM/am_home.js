@@ -8,24 +8,37 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 
 const AmHome = () => {
     const buttonStyle = {
-        backgroundColor: '#FFFFFF',
-        color: '#000000',
+        backgroundColor: 'rgb(115, 49, 202)', 
+        color: 'white', 
         flex: 1,
-        maxWidth: '30%',
-        height: '120px',
-        borderRadius: '10px',
-        transition: 'transform 0.3s',
-        fontSize: '18px',
+        width: '250px', 
+        height: '80px', 
+        fontSize: '16px',
         fontFamily: '"Roboto", sans-serif',
         textTransform: 'none',
+        marginBottom: '20px',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        border: '2px solid transparent',
+        borderRadius: '8px', 
+        transition: 'background-color 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s', 
+        textAlign: 'center', 
+        padding: '10px', 
     };
 
     const handleMouseOver = (e) => {
-        e.currentTarget.style.transform = 'scale(1.05)';
+        e.currentTarget.style.backgroundColor = '#FFFFFF'; 
+        e.currentTarget.style.color = 'rgb(115, 49, 202)'; 
+        e.currentTarget.style.border = '2px solid rgb(115, 49, 202)'; 
+        e.currentTarget.style.boxShadow = '0px 4px 12px rgba(115, 49, 202, 0.5)'; 
     };
 
     const handleMouseOut = (e) => {
-        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.backgroundColor = 'rgb(115, 49, 202)'; 
+        e.currentTarget.style.color = '#FFFFFF'; 
+        e.currentTarget.style.border = '2px solid transparent'; 
+        e.currentTarget.style.boxShadow = 'none'; 
     };
 
     return (
@@ -34,8 +47,8 @@ const AmHome = () => {
             <div style={styles.content}>
                 <div style={styles.buttonBox}>
                     <Stack
-                        direction={{ xs: 'column', sm: 'row' }}
-                        spacing={2}
+                        direction="column"
+                        spacing={2} 
                         style={styles.buttonStack}
                     >
                         <Button
@@ -75,7 +88,7 @@ const AmHome = () => {
 const styles = {
     pageContainer: {
         backgroundColor: '#FFFFFF',
-        height: '100vh',
+        height: '100vh', 
         margin: '0',
         padding: '0',
     },
@@ -84,30 +97,26 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%',
+        height: '100%', 
         textAlign: 'center',
         padding: '20px',
     },
     buttonBox: {
-        background: 'linear-gradient(to bottom, #112E3E, #1A4C63)', 
+        background: 'rgba(0, 0, 0, 0.05)', 
         width: '100%', 
-        maxWidth: '1200px', 
-        borderRadius: '15px',
+        maxWidth: '700px', 
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
         padding: '40px',
         textAlign: 'center',
         marginLeft: 'auto', 
         marginRight: 'auto', 
-        height: '100%',
         marginBottom: '20px',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         boxSizing: 'border-box',
     },
     buttonStack: {
         width: '100%',
-        justifyContent: 'space-between',
         alignItems: 'center',
     },
 };

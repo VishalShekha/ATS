@@ -19,27 +19,11 @@ export default function App() {
           backgroundColor: '#FFFFFF',
           width: '400px',
           padding: '40px',
-          paddingTop: '20px', // Adjust top padding for logo placement
           borderRadius: '20px',
           boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
           textAlign: 'center',
-          position: 'relative',
         }}
       >
-        {/* Logo */}
-        <img
-          src="https://via.placeholder.com/50" // Replace with your logo URL
-          alt="Logo"
-          style={{
-            position: 'absolute',
-            top: '10px',
-            left: '20px',
-            width: '50px',
-            height: '50px',
-            borderRadius: '5px',
-          }}
-        />
-
         {/* Title */}
         <Typography
           variant="h5"
@@ -47,7 +31,6 @@ export default function App() {
             fontWeight: 'bold',
             color: '#333333',
             marginBottom: '30px',
-            marginTop: '50px', // Adjust for logo space
           }}
         >
           AM Login
