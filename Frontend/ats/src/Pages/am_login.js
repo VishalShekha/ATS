@@ -1,48 +1,71 @@
-import * as React from 'react';
-import { TextField, Button, Typography } from '@mui/material';
+import React from 'react';
+import { TextField, Button, Typography, Checkbox, FormControlLabel, InputAdornment } from '@mui/material';
+import { Email, Lock } from '@mui/icons-material';
 
 export default function App() {
   return (
     <div
       style={{
-        backgroundColor: '#112E3E',
+        background: 'linear-gradient(to bottom, #112E3E, #1A4C63)',
         height: '100vh',
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative',
+        alignItems: 'center',
       }}
     >
-      {/* Title */}
-      <Typography
-        variant="h4"
-        style={{
-          fontWeight: 'bold',
-          color: '#FFFFFF',
-          marginBottom: '20px',
-        }}
-      >
-        AM Login
-      </Typography>
-
-      {/* Login Box */}
+      {/* Login Card */}
       <div
         style={{
-          backgroundColor: '#DDD0C8',
-          width: '80%',
+          backgroundColor: '#FFFFFF',
+          width: '400px',
           padding: '40px',
-          borderRadius: '15px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
+          paddingTop: '20px', // Adjust top padding for logo placement
+          borderRadius: '20px',
+          boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
           textAlign: 'center',
+          position: 'relative',
         }}
       >
-        {/* Username Field */}
+        {/* Logo */}
+        <img
+          src="https://via.placeholder.com/50" // Replace with your logo URL
+          alt="Logo"
+          style={{
+            position: 'absolute',
+            top: '10px',
+            left: '20px',
+            width: '50px',
+            height: '50px',
+            borderRadius: '5px',
+          }}
+        />
+
+        {/* Title */}
+        <Typography
+          variant="h5"
+          style={{
+            fontWeight: 'bold',
+            color: '#333333',
+            marginBottom: '30px',
+            marginTop: '50px', // Adjust for logo space
+          }}
+        >
+          AM Login
+        </Typography>
+
+        {/* Email Field */}
         <TextField
-          label="Username"
+          label="Email ID"
           variant="outlined"
           fullWidth
           style={{ marginBottom: '20px' }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Email style={{ color: '#1A4C63' }} />
+              </InputAdornment>
+            ),
+          }}
         />
 
         {/* Password Field */}
@@ -51,23 +74,52 @@ export default function App() {
           variant="outlined"
           type="password"
           fullWidth
-          style={{ marginBottom: '20px' }}
+          style={{ marginBottom: '10px' }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Lock style={{ color: '#1A4C63' }} />
+              </InputAdornment>
+            ),
+          }}
         />
+
+        {/* Remember Me and Forgot Password */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '20px',
+          }}
+        >
+          <FormControlLabel
+            control={<Checkbox size="small" />}
+            label={<Typography style={{ fontSize: '14px' }}>Remember me</Typography>}
+          />
+          <Typography
+            style={{
+              color: '#3D5965',
+              fontSize: '14px',
+              cursor: 'pointer',
+              textDecoration: 'underline',
+            }}
+          >
+            Forgot Password?
+          </Typography>
+        </div>
 
         {/* Login Button */}
         <Button
           variant="contained"
+          fullWidth
           style={{
-            backgroundColor: '#112E3E',
+            backgroundColor: '#1A4C63',
             color: '#FFFFFF',
-            width: '100%',
             height: '50px',
-            borderRadius: '10px',
+            borderRadius: '25px',
             fontSize: '16px',
-            transition: 'transform 0.3s',
           }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
           Login
         </Button>
