@@ -8,10 +8,8 @@ import {
   Select,
   FormControl,
   InputLabel,
-  Checkbox,
 } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers';
-import { Email, Person, CalendarToday, CheckCircle, Work, LocationOn, Description } from '@mui/icons-material';
+import { CheckCircle, Work, LocationOn, Description } from '@mui/icons-material';
 
 export default function AddRequirement() {
   return (
@@ -149,23 +147,15 @@ export default function AddRequirement() {
             }}
           />
 
-          {/* Calendar Field: Requirement Created Date */}
-          <DatePicker
+          {/* Field: Requirement Created Date (Simple Text Field) */}
+          <TextField
             label="Requirement Created Date"
-            renderInput={(props) => (
-              <TextField
-                {...props}
-                fullWidth
-                style={{ marginBottom: '20px' }}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <CalendarToday style={{ color: '#1A4C63' }} />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            )}
+            type="date"
+            fullWidth
+            style={{ marginBottom: '20px' }}
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
 
           {/* Field: Skill Set */}
@@ -175,8 +165,6 @@ export default function AddRequirement() {
             fullWidth
             style={{ marginBottom: '20px' }}
           />
-
-          {/* Add Other Fields Here... */}
 
           {/* Dropdown: Status */}
           <FormControl fullWidth style={{ marginBottom: '20px' }}>
