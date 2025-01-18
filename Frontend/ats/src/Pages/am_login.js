@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div
       style={{
-        background: 'linear-gradient(to bottom, #112E3E, #1A4C63)',
+        background:  'white',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
