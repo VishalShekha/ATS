@@ -1,18 +1,22 @@
 import React from 'react';
 import { TextField, Button, Typography, Checkbox, FormControlLabel, InputAdornment } from '@mui/material';
 import { Email, Lock } from '@mui/icons-material';
+import Header from '../../Components/Header';
 
 export default function App() {
   return (
     <div
       style={{
-        background:  'white',
+        background: '#f5f5f5',
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
       }}
     >
+      {/* Header */}
+      <Header />
+      
       {/* Login Card */}
       <div
         style={{
@@ -22,6 +26,7 @@ export default function App() {
           borderRadius: '20px',
           boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
           textAlign: 'center',
+          marginTop: '150px',
         }}
       >
         {/* Title */}
@@ -45,7 +50,7 @@ export default function App() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Email style={{ color: '#1A4C63' }} />
+                <Email style={{ color:'rgb(101, 64, 161)' }} />
               </InputAdornment>
             ),
           }}
@@ -61,7 +66,7 @@ export default function App() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Lock style={{ color: '#1A4C63' }} />
+                <Lock style={{ color: 'rgb(101, 64, 161)' }} />
               </InputAdornment>
             ),
           }}
@@ -82,7 +87,7 @@ export default function App() {
           />
           <Typography
             style={{
-              color: '#3D5965',
+              color: 'rgb(101, 64, 161)',
               fontSize: '14px',
               cursor: 'pointer',
               textDecoration: 'underline',
@@ -97,7 +102,7 @@ export default function App() {
           variant="contained"
           fullWidth
           style={{
-            backgroundColor: '#1A4C63',
+            backgroundColor: 'rgb(101, 64, 161)',
             color: '#FFFFFF',
             height: '50px',
             borderRadius: '25px',
