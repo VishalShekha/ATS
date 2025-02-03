@@ -107,6 +107,18 @@ export default function AddRequirement() {
               </Select>
             </FormControl>
 
+            <FormControl className="full-width">
+              <InputLabel>Recriuter</InputLabel>
+              <Select>
+              <MenuItem value="Kishoth Kumar">Kishoth Kumar</MenuItem>
+              <MenuItem value="Sonali Sinha">Sonali Sinha</MenuItem>
+              <MenuItem value="Kaushal BA">Kaushal BA</MenuItem>
+              <MenuItem value="Ganesh Kumar">Ganesh Kumar</MenuItem>
+              <MenuItem value="Shruthi Ravikumar">Shruthi Ravikumar</MenuItem>
+              <MenuItem value="Aishwarya R">Aishwarya R</MenuItem>
+              </Select>
+            </FormControl>
+
             <div className="save-button-container">
               <Button variant="contained" className="save-button" startIcon={<CheckCircle />}>
                 Save
