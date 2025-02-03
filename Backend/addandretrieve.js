@@ -8,12 +8,12 @@ const client = new Client({
   port: 5432,
 });
 
+client.connect()
+  .then(() => console.log('Connected to PostgreSQL'))
+  .catch(err => console.error('Connection error', err.stack));
 
 async function main() {
     // Connect to the PostgreSQL database
-    client.connect()
-      .then(() => console.log('Connected to PostgreSQL'))
-      .catch(err => console.error('Connection error', err.stack));
   
     try {
       // const insertQuery = ``;
@@ -39,4 +39,4 @@ async function main() {
     }
   }
   
-  main();
+  // main();

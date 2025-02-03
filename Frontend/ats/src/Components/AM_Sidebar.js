@@ -7,12 +7,19 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Home, Assignment, Edit } from '@mui/icons-material';  
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidthCollapsed = 60; 
 const drawerWidthExpanded = 240; 
 
 export default function Sidebar() {
   const [isExpanded, setIsExpanded] = React.useState(false); 
+
+  //TODO: make this into a proper js file 2
+  const navigate = useNavigate();  
+  const handleNavigation = (route) => {
+    navigate(route); 
+  };
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -41,20 +48,20 @@ export default function Sidebar() {
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
           <Box sx={{ overflow: 'auto' }}>
-            <List>
-              {["Create Client", "Add Requirement", "Edit/View Requirements"].map((text, index) => (
+          <List>
+              {[
+                { text: "Create Client", icon: <Home sx={{ marginRight: 2, color: 'white' }} />, route: "/createClient" },
+                { text: "Add Requirement", icon: <Assignment sx={{ marginRight: 2, color: 'white' }} />, route: "/addRequirement" },
+                { text: "Edit/View Requirements", icon: <Edit sx={{ marginRight: 2, color: 'white' }} />, route: "/viewRequirement" }
+              ].map(({ text, icon, route }, index) => (
                 <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    {/* Show icons only by default */}
-                    {index === 0 && <Home sx={{ marginRight: 2, color: 'white' }} />}
-                    {index === 1 && <Assignment sx={{ marginRight: 2, color: 'white' }} />}
-                    {index === 2 && <Edit sx={{ marginRight: 2, color: 'white' }} />}
-                    {/* Show text when expanded */}
+                  <ListItemButton onClick={() => handleNavigation(route)}>  {/* Navigate on click */}
+                    {icon}
                     <ListItemText
                       primary={text}
                       sx={{
-                        display: isExpanded ? 'block' : 'none', 
-                        color: 'white', 
+                        display: isExpanded ? 'block' : 'none',
+                        color: 'white',
                       }}
                     />
                   </ListItemButton>

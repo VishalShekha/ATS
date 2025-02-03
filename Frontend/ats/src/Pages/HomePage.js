@@ -6,9 +6,18 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import WorkIcon from '@mui/icons-material/Work';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './CSS/HomePage.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
+  //TODO: make this into a proper js file
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/amlogin');
+  };
   return (
+
+
     <div className="homepage-container">
       {/* Purple Area */}
       <div className="header">
@@ -26,7 +35,7 @@ export default function Homepage() {
             <Button variant="contained" startIcon={<WorkIcon />} className="custom-button">
               Recruiter
             </Button>
-            <Button variant="contained" startIcon={<AccountCircleIcon />} className="custom-button">
+            <Button variant="contained" startIcon={<AccountCircleIcon />} className="custom-button" onClick={handleClick}>
               Account Manager
             </Button>
           </Stack>

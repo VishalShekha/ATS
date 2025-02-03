@@ -3,8 +3,15 @@ import { TextField, Button, Typography, Checkbox, FormControlLabel, InputAdornme
 import { Email, Lock } from '@mui/icons-material';
 import Header from '../../Components/Header';
 import './CSS/AmLogin.css';  
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
+  //TODO: make this into a proper js file 1
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/viewRequirement');
+  };
   return (
     <div className="login-container">
       {/* Header */}
@@ -60,7 +67,7 @@ export default function App() {
         </div>
 
         {/* Login Button */}
-        <Button variant="contained" className="login-button">
+        <Button variant="contained" className="login-button" onClick={handleClick}>
           Login
         </Button>
       </div>
