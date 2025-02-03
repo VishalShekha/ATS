@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage.js";
-import AmLogin from "./Pages/AM/am_login.js";
+import AmLogin from "./Pages/AM/AmLogin.js";
 import CreateClient from "./Pages/AM/CreateClient.js";
-import AddRequirement from "./Pages/AM/addReq.js";
-import RequirementsPage from "./Pages/AM/View-Edit-Req.js";
+import AddRequirement from "./Pages/AM/AddRequirement.js";
+import ViewEditRequirements from "./Pages/AM/ViewEditRequirements.js";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/amlogin" element={<AmLogin />} />
         <Route path="/createClient" element={<CreateClient />} />
         <Route path="/addRequirement" element={<AddRequirement />} />
-        <Route path="/viewRequirement" element={<RequirementsPage />} />
+        <Route path="/viewRequirement" element={<ViewEditRequirements />} />
 
       </Routes>
     </Router>
