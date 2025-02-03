@@ -5,7 +5,7 @@ const GoBackButton = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); 
+    navigate("/amlogin"); 
   };
 
   return (
