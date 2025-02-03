@@ -2,42 +2,18 @@ import React from 'react';
 import { TextField, Button, Typography, Checkbox, FormControlLabel, InputAdornment } from '@mui/material';
 import { Email, Lock } from '@mui/icons-material';
 import Header from '../../Components/Header';
+import './CSS/AmLogin.css';  
 
 export default function App() {
   return (
-    <div
-      style={{
-        background: '#f5f5f5',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <div className="login-container">
       {/* Header */}
       <Header />
       
       {/* Login Card */}
-      <div
-        style={{
-          backgroundColor: '#FFFFFF',
-          width: '400px',
-          padding: '40px',
-          borderRadius: '20px',
-          boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
-          textAlign: 'center',
-          marginTop: '150px',
-        }}
-      >
+      <div className="login-card">
         {/* Title */}
-        <Typography
-          variant="h5"
-          style={{
-            fontWeight: 'bold',
-            color: '#333333',
-            marginBottom: '30px',
-          }}
-        >
+        <Typography variant="h5" className="login-title">
           AM Login
         </Typography>
 
@@ -45,12 +21,12 @@ export default function App() {
         <TextField
           label="Email ID"
           variant="outlined"
-          fullWidth
-          style={{ marginBottom: '20px' }}
+          
+          className="input-field"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Email style={{ color:'rgb(101, 64, 161)' }} />
+                <Email className="icon" />
               </InputAdornment>
             ),
           }}
@@ -61,54 +37,30 @@ export default function App() {
           label="Password"
           variant="outlined"
           type="password"
-          fullWidth
-          style={{ marginBottom: '10px' }}
+          
+          className="input-field"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Lock style={{ color: 'rgb(101, 64, 161)' }} />
+                <Lock className="icon" />
               </InputAdornment>
             ),
           }}
         />
 
         {/* Remember Me and Forgot Password */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '20px',
-          }}
-        >
+        <div className="remember-forgot">
           <FormControlLabel
             control={<Checkbox size="small" />}
-            label={<Typography style={{ fontSize: '14px' }}>Remember me</Typography>}
+            label={<Typography className="checkbox-label">Remember me</Typography>}
           />
-          <Typography
-            style={{
-              color: 'rgb(101, 64, 161)',
-              fontSize: '14px',
-              cursor: 'pointer',
-              textDecoration: 'underline',
-            }}
-          >
+          <Typography className="forgot-password">
             Forgot Password?
           </Typography>
         </div>
 
         {/* Login Button */}
-        <Button
-          variant="contained"
-          fullWidth
-          style={{
-            backgroundColor: 'rgb(101, 64, 161)',
-            color: '#FFFFFF',
-            height: '50px',
-            borderRadius: '25px',
-            fontSize: '16px',
-          }}
-        >
+        <Button variant="contained" className="login-button">
           Login
         </Button>
       </div>

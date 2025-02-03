@@ -12,39 +12,24 @@ import {
 import { CheckCircle, Work, LocationOn, Description } from '@mui/icons-material';
 import Header from '../../Components/Header';
 import Sidebar from '../../Components/AM_Sidebar';
+import './CSS/AddRequirement.css';
 
 export default function AddRequirement() {
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f5f5f5', position:'absolute',left:'0px',right:'0px',marginLeft:'-50px' }}>
+    <div className="add-requirement-container">
       <Sidebar />
-      <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+      <div className="main-content">
         <Header />
 
-        {/* Add Requirement Form */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            width: '80%',
-            maxWidth: '800px',
-            padding: '40px',
-            borderRadius: '20px',
-            boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
-            textAlign: 'center',
-            marginTop: '100px',
-          }}
-        >
-          {/* Main Title */}
-          <Typography variant="h5" style={{ fontWeight: 'bold', color: '#333333', marginBottom: '30px' }}>
+        <div className="requirement-form">
+          <Typography variant="h5" className="requirement-title">
             Add Requirement
           </Typography>
 
           <form style={{ textAlign: 'left' }}>
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-              {/* Field: Requirement Name (60%) */}
-              <TextField label="Requirement Name" variant="outlined" style={{ width: '60%' }} />
-
-              {/* Field: Client Dropdown (30%) */}
-              <FormControl style={{ width: '30%' }}>
+            <div className="input-group">
+              <TextField label="Requirement Name" variant="outlined" className="input-field" />
+              <FormControl className="select-field">
                 <InputLabel>Client</InputLabel>
                 <Select>
                   <MenuItem value="Client A">Client A</MenuItem>
@@ -53,11 +38,10 @@ export default function AddRequirement() {
               </FormControl>
             </div>
 
-            {/* Field: Job Title (60%) */}
             <TextField
               label="Job Title"
               variant="outlined"
-              style={{ width: '60%', marginBottom: '20px' }}
+              className="input-field"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -67,11 +51,10 @@ export default function AddRequirement() {
               }}
             />
 
-            {/* Field: Job Location (60%) */}
             <TextField
               label="Job Location"
               variant="outlined"
-              style={{ width: '60%', marginBottom: '20px' }}
+              className="input-field"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -81,18 +64,15 @@ export default function AddRequirement() {
               }}
             />
 
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-              {/* Dropdown: Job Workspace (50%) */}
-              <FormControl style={{ width: '50%' }}>
+            <div className="input-group">
+              <FormControl className="select-field">
                 <InputLabel>Job Workspace</InputLabel>
                 <Select>
                   <MenuItem value="On-site">On-site</MenuItem>
                   <MenuItem value="Remote">Remote</MenuItem>
                 </Select>
               </FormControl>
-
-              {/* Dropdown: Job Type (50%) */}
-              <FormControl style={{ width: '50%' }}>
+              <FormControl className="select-field">
                 <InputLabel>Job Type</InputLabel>
                 <Select>
                   <MenuItem value="Full-Time">Full-Time</MenuItem>
@@ -101,12 +81,10 @@ export default function AddRequirement() {
               </FormControl>
             </div>
 
-            {/* Field: Job Description with Attachment */}
             <TextField
               label="Job Description"
               variant="outlined"
-              fullWidth
-              style={{ marginBottom: '20px' }}
+              className="full-width"
               multiline
               rows={3}
               InputProps={{
@@ -118,11 +96,9 @@ export default function AddRequirement() {
               }}
             />
 
-            {/* Field: Skill Set */}
-            <TextField label="Skill Set" variant="outlined" fullWidth style={{ marginBottom: '20px' }} />
+            <TextField label="Skill Set" variant="outlined" className="full-width" />
 
-            {/* Dropdown: Status */}
-            <FormControl fullWidth style={{ marginBottom: '20px' }}>
+            <FormControl className="full-width">
               <InputLabel>Status</InputLabel>
               <Select>
                 <MenuItem value="Active">Active</MenuItem>
@@ -131,20 +107,8 @@ export default function AddRequirement() {
               </Select>
             </FormControl>
 
-            {/* Save Button (60%) */}
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button
-                variant="contained"
-                style={{
-                  backgroundColor: 'rgb(102, 76, 161)',
-                  color: '#FFFFFF',
-                  height: '50px',
-                  borderRadius: '25px',
-                  fontSize: '16px',
-                  width: '60%',
-                }}
-                startIcon={<CheckCircle />}
-              >
+            <div className="save-button-container">
+              <Button variant="contained" className="save-button" startIcon={<CheckCircle />}>
                 Save
               </Button>
             </div>

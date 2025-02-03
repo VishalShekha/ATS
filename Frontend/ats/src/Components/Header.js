@@ -79,7 +79,7 @@ const styles = {
     alignItems: 'center',
   },
   logoImage: {
-    width: '100px',
+    width: '150px',
     height: 'auto',
   },
   rightContainer: {
