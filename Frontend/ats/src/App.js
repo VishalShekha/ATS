@@ -5,6 +5,7 @@ import AmLogin from "./Pages/AM/AmLogin.js";
 import CreateClient from "./Pages/AM/CreateClient.js";
 import AddRequirement from "./Pages/AM/AddRequirement.js";
 import ViewEditRequirements from "./Pages/AM/ViewEditRequirements.js";
+import EditRequirement from "./Pages/AM/EditRequirement";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/createClient" element={<CreateClient />} />
         <Route path="/addRequirement" element={<AddRequirement />} />
         <Route path="/viewRequirement" element={<ViewEditRequirements />} />
+        <Route path="/editRequirement" element={<EditRequirement />} />
 
       </Routes>
     </Router>

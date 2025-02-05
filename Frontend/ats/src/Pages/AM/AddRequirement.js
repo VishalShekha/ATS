@@ -18,19 +18,18 @@ export default function AddRequirement() {
   return (
     <div className="add-requirement-container">
       <Sidebar />
+      <Typography variant="h5" className="requirement-title">
+            Add Requirement
+      </Typography>
       <div className="main-content">
         <Header />
 
         <div className="requirement-form">
-          <Typography variant="h5" className="requirement-title">
-            Add Requirement
-          </Typography>
-
           <form style={{ textAlign: 'left' }}>
             <div className="input-group">
-              <TextField label="Requirement Name" variant="outlined" className="input-field" />
+              <TextField label="Requirement Name *" variant="outlined" className="input-field" />
               <FormControl className="select-field">
-                <InputLabel>Client</InputLabel>
+                <InputLabel>Client *</InputLabel>
                 <Select>
                   <MenuItem value="Client A">Client A</MenuItem>
                   <MenuItem value="Client B">Client B</MenuItem>
@@ -42,6 +41,7 @@ export default function AddRequirement() {
               label="Job Title"
               variant="outlined"
               className="input-field"
+              required
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -55,6 +55,7 @@ export default function AddRequirement() {
               label="Job Location"
               variant="outlined"
               className="input-field"
+              required
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -65,14 +66,14 @@ export default function AddRequirement() {
             />
 
             <div className="input-group">
-              <FormControl className="select-field">
+              <FormControl className="select-field" required>
                 <InputLabel>Job Workspace</InputLabel>
                 <Select>
                   <MenuItem value="On-site">On-site</MenuItem>
                   <MenuItem value="Remote">Remote</MenuItem>
                 </Select>
               </FormControl>
-              <FormControl className="select-field">
+              <FormControl className="select-field" required>
                 <InputLabel>Job Type</InputLabel>
                 <Select>
                   <MenuItem value="Full-Time">Full-Time</MenuItem>
@@ -96,26 +97,61 @@ export default function AddRequirement() {
               }}
             />
 
-            <TextField label="Skill Set" variant="outlined" className="full-width" />
+            <div className="input-group">
+              <TextField label="Skill Set" variant="outlined" className="skill-set-field" required />
+              <FormControl className="recruiter-dropdown">
+                <InputLabel>Recruiter</InputLabel>
+                <Select>
+                  <MenuItem value="Kishoth Kumar">Kishoth Kumar</MenuItem>
+                  <MenuItem value="Sonali Sinha">Sonali Sinha</MenuItem>
+                  <MenuItem value="Kaushal BA">Kaushal BA</MenuItem>
+                  <MenuItem value="Ganesh Kumar">Ganesh Kumar</MenuItem>
+                  <MenuItem value="Shruthi Ravikumar">Shruthi Ravikumar</MenuItem>
+                  <MenuItem value="Aishwarya R">Aishwarya R</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
 
-            <FormControl className="full-width">
+            <div className="input-group">
+              <FormControl className="select-field" required>
+                <InputLabel>Experience Range</InputLabel>
+                <Select>
+                  <MenuItem value="1-2 Years">1-2 Years</MenuItem>
+                </Select>
+              </FormControl>
+              <TextField label="Maximum CTC" variant="outlined" className="input-field" required />
+            </div>
+
+            <div className="input-group">
+              <TextField label="Hiring Manager Name" variant="outlined" className="input-field" required />
+              <TextField label="Hiring Manager Mobile" variant="outlined" className="mobile-field" required />
+            </div>
+
+            <TextField label="Hiring Manager Email" variant="outlined" className="input-field" required />
+
+            <div className="input-group">
+              <FormControl className="select-field" required>
+                <InputLabel>Account Owner</InputLabel>
+                <Select>
+                  <MenuItem value="Shefeedh Hamsa">Shefeedh Hamsa</MenuItem>
+                  <MenuItem value="Vinayak">Vinayak</MenuItem>
+                  <MenuItem value="Niveditha">Niveditha</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className="select-field" required>
+                <InputLabel>Account Manager</InputLabel>
+                <Select>
+                  <MenuItem value="Ganesh Kumar">Ganesh Kumar</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            <FormControl className="status-field">
               <InputLabel>Status</InputLabel>
               <Select>
                 <MenuItem value="Active">Active</MenuItem>
                 <MenuItem value="Hold">Hold</MenuItem>
                 <MenuItem value="Closed">Closed</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl className="full-width">
-              <InputLabel>Recriuter</InputLabel>
-              <Select>
-              <MenuItem value="Kishoth Kumar">Kishoth Kumar</MenuItem>
-              <MenuItem value="Sonali Sinha">Sonali Sinha</MenuItem>
-              <MenuItem value="Kaushal BA">Kaushal BA</MenuItem>
-              <MenuItem value="Ganesh Kumar">Ganesh Kumar</MenuItem>
-              <MenuItem value="Shruthi Ravikumar">Shruthi Ravikumar</MenuItem>
-              <MenuItem value="Aishwarya R">Aishwarya R</MenuItem>
               </Select>
             </FormControl>
 
