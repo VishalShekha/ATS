@@ -94,20 +94,17 @@ export default function AddClient() {
             />
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button
-                variant="contained"
-                style={{
-                  backgroundColor: 'rgb(102, 76, 161)',
-                  color: '#FFFFFF',
-                  height: '50px',
-                  borderRadius: '25px',
-                  fontSize: '16px',
-                  width: '60%',
-                }}
-                startIcon={<CheckCircle />}
-              >
-                Save
-              </Button>
+              <Button 
+                              variant="contained" 
+                              className="save-button" 
+                              startIcon={<CheckCircle />} 
+                              onClick={() => {
+                                alert("Saved Changes!");
+                                window.location.href = "/viewRequirement"; 
+                              }}
+                            >
+                              Save
+                            </Button>
             </div>
           </form>
         </div>

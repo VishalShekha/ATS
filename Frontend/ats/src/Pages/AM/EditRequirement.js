@@ -172,10 +172,20 @@ export default function EditRequirement() {
             </FormControl>
 
             <div className="save-button-container">
-              <Button variant="contained" className="save-button" startIcon={<CheckCircle />} disabled={!isEditing}>
+              <Button 
+                variant="contained" 
+                className="save-button" 
+                startIcon={<CheckCircle />} 
+                disabled={!isEditing}
+                onClick={() => {
+                  alert("Saved Changes!");
+                 handleEditToggle()
+                }}
+              >
                 Save
               </Button>
             </div>
+
           </form>
         </div>
       </div>

@@ -156,9 +156,17 @@ export default function AddRequirement() {
             </FormControl>
 
             <div className="save-button-container">
-              <Button variant="contained" className="save-button" startIcon={<CheckCircle />}>
-                Save
-              </Button>
+              <Button 
+                              variant="contained" 
+                              className="save-button" 
+                              startIcon={<CheckCircle />} 
+                              onClick={() => {
+                                alert("Saved Changes!");
+                                window.location.href = "/viewRequirement"; 
+                              }}
+                            >
+                              Save
+                            </Button>
             </div>
           </form>
         </div>

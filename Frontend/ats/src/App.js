@@ -22,7 +22,7 @@ function App() {
         <Route path="/createClient" element={<CreateClient />} />
         <Route path="/addRequirement" element={<AddRequirement />} />
         <Route path="/viewRequirement" element={<ViewEditRequirements />} />
-        <Route path="/editRequirement" element={<EditRequirement />} />
+        <Route path="/requirements/DTM00001" element={<EditRequirement />} />
 
       </Routes>
     </Router>
