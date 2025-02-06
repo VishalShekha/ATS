@@ -10,7 +10,6 @@ const GoBackButton = () => {
   
   return (
     <button onClick={goBack} style={styles.goBackButton}>
-      {/* U-turn like arrow symbol */}
       <span style={styles.icon}>↩</span>
     </button>
   );
@@ -18,19 +17,24 @@ const GoBackButton = () => {
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  
   const navigate = useNavigate();
+
   const logout = () => {
     navigate("/amlogin"); 
   };
+  
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const goToHome = () => {
+    navigate("/"); // Navigate to homepage
   };
 
   return (
     <header style={styles.header}>
       {/* Logo */}
-      <div style={styles.logo}>
+      <div style={styles.logo} onClick={goToHome}>
         <img
           src="/Logo-bg.png" 
           alt="Logo"
@@ -40,7 +44,6 @@ const Header = () => {
 
       {/* Right Side (Go Back Button & Menu) */}
       <div style={styles.rightContainer}>
-        {/* Go Back Button */}
         <GoBackButton />
         
         {/* Menu Button */}
@@ -64,7 +67,7 @@ const Header = () => {
 
 const styles = {
   header: {
-    background: 'linear-gradient(to right,  rgb(112, 80, 207), rgba(156, 99, 241, 0.86))',
+    background: 'linear-gradient(to right, rgb(112, 80, 207), rgba(156, 99, 241, 0.86))',
     height: '60px',
     display: 'flex',
     alignItems: 'center',
@@ -75,12 +78,13 @@ const styles = {
     left: '0',
     width: '100%',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
-    zIndex: '1100', // Set zIndex to ensure header is above the sidebar
+    zIndex: '1100',
   },
   logo: {
     flex: 1, 
     display: 'flex',
     alignItems: 'center',
+    cursor: 'pointer', // Added cursor pointer
   },
   logoImage: {
     width: '150px',
