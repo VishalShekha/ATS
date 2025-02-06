@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 const GoBackButton = () => {
   const navigate = useNavigate();
-
+  
   const goBack = () => {
-    navigate("/amlogin"); 
+    navigate(-1); 
   };
-
+  
   return (
     <button onClick={goBack} style={styles.goBackButton}>
       {/* U-turn like arrow symbol */}
@@ -18,7 +18,11 @@ const GoBackButton = () => {
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  
+  const navigate = useNavigate();
+  const logout = () => {
+    navigate("/amlogin"); 
+  };
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -49,7 +53,7 @@ const Header = () => {
           {menuOpen && (
             <div style={styles.dropdownMenu}>
               <button style={styles.menuItem}>View Profile</button>
-              <button style={styles.menuItem}>Logout</button>
+              <button style={styles.menuItem} onClick={logout}>Logout</button>
             </div>
           )}
         </div>

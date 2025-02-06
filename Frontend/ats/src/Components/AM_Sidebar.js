@@ -52,7 +52,7 @@ export default function Sidebar() {
               {[
                 { text: "Create Client", icon: <Home sx={{ marginRight: 2, color: 'white' }} />, route: "/createClient" },
                 { text: "Add Requirement", icon: <Assignment sx={{ marginRight: 2, color: 'white' }} />, route: "/addRequirement" },
-                { text: "Edit/View Requirements", icon: <Edit sx={{ marginRight: 2, color: 'white' }} />, route: "/viewRequirement" }
+                { text: "View Requirements", icon: <Edit sx={{ marginRight: 2, color: 'white' }} />, route: "/viewRequirement" }
               ].map(({ text, icon, route }, index) => (
                 <ListItem key={text} disablePadding>
                   <ListItemButton onClick={() => handleNavigation(route)}>  {/* Navigate on click */}
